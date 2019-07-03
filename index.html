@@ -1,24 +1,64 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">        
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    </head>
-    <body>
 
-      <h1>Hello World!</h1>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-     
-        
-        <script src="app.js" async defer></script>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8576a8272e.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron" style="background-color: #20315A ; color: white;">
+            <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i> New York Times Search</strong></h1>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header" style="background-color: #20315A ; color: white;">
+                Search Parameters
+            </div>
+            <div class="card-body">
+                <div class="searchTerm">
+                    Search Term: <br> <input type="textbox" value=""></input>
+                </div>
+
+                <!-- <div class="numRecords">
+                    Number of Records to Retrieve: <br> <input type="textbox" value=""></input>
+                </div> -->
+                <div class="form-group">
+                    <label for="inputState">Number of Records to Retrieve: </label>
+                    <select id="inputState" class="form-control">
+                        <option>1</option>
+                        <option selected>5</option>
+                        <option>10</option>
+                    </select>
+                </div>
+                <div class="startYear">
+                    Start Year (Optional): <br> <input type="textbox" value=""></input>
+                </div>
+                <div class="endYear">
+                    End Year (Optional): <br> <input type="textbox" value=""></input>
+                </div>
+                <br>
+                <button type="search" class="btn btn-secondary">Search</button>
+                <button type="search" class="btn btn-secondary">Clear results</button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+    <script src="" async defer></script>
+</body>
+
 </html>
