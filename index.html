@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8576a8272e.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -31,7 +32,7 @@
             </div>
             <div class="card-body">
                 <div class="searchTerm">
-                    Search Term: <br> <input type="textbox" value=""></input>
+                    Search Term: <br> <input id="term" type="textbox" value=""></input>
                 </div>
 
                 <!-- <div class="numRecords">
@@ -46,14 +47,18 @@
                     </select>
                 </div>
                 <div class="startYear">
-                    Start Year (Optional): <br> <input type="textbox" value=""></input>
+                    Start Year (Optional): <br> <input id="firstyear" type="textbox" value=""></input>
                 </div>
                 <div class="endYear">
-                    End Year (Optional): <br> <input type="textbox" value=""></input>
+                    End Year (Optional): <br> <input id="lastyear" type="textbox" value=""></input>
                 </div>
                 <br>
-                <button type="search" class="btn btn-secondary">Search</button>
-                <button type="search" class="btn btn-secondary">Clear results</button>
+                <button id="searchb" type="search" class="btn btn-secondary">Search</button>
+                <button id="clear" type="search" class="btn btn-secondary">Clear results</button>
+            </div>
+
+            <div id="articles">
+                
             </div>
         </div>
 
@@ -61,7 +66,7 @@
 
 
     </div>
-    <script src="" async defer></script>
+    <script src="app.js" async defer></script>
 </body>
 
 </html>

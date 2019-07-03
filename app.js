@@ -1,32 +1,45 @@
 
 
-var topic = "obama"
-var startyear = "2017"
-var endyear = "2017"
-var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + topic + "q=obama&facet_fields=source&facet=true&begin_date=" + startyear + "0101&end_date=" + endyear + "1231&api-key=AURIva3W9i7nNcn9aJo6G5jme8AxjZqn";
-var count = 0;
+var topic = "";
+var startYear = "";
+var endYear = "";
+var count;
+var queryURL;
 
-
-$.ajax({
-    url: queryURL,
-    method: "GET"
-
-}).then(function(data){
-    
-
-    for (i = 0; i < count; i++) {
-        console.log(i);
-        var newArticle = $('<div>');
-        var newH = $('<h3>');
-        newH.text(data.response.docs[i].abstract);
-        var newP = $('<p>');
-        newP.text(data.response.docs[i].byline['original']);
-        newArticle.append(newH).append(newP)
-        $('wherethearticleshouldgo').append(newArticle);
-    
+$('#searchb').on('click', function () {
+    topic = $('#term').val();
+    count = parseInt($('#inputState').val());
+    startYear = $('#firstyear').val();
+    endYear = $('#lastyear').val();
+    if (startYear === "" || endYear === "") {
+        queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + topic + "&facet_fields=source&facet=true&api-key=AURIva3W9i7nNcn9aJo6G5jme8AxjZqn";
     }
-    
+    else {
+        queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + topic + "q=obama&facet_fields=source&facet=true&begin_date=" + startYear + "0101&end_date=" + endYear + "1231&api-key=AURIva3W9i7nNcn9aJo6G5jme8AxjZqn";
+    }
 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+
+    }).then(function (data) {
+        console.log(data)
+        for (i = 0; i < count; i++) {
+            var newArticle = $('<div>');
+            var newH = $('<a href="' + data.response.docs[i].web_url + '"><h3>' + data.response.docs[i].abstract + '</h3></a>');
+            var newP = $('<p>');
+            newP.text(data.response.docs[i].byline['original']);
+            newArticle.append(newH).append(newP)
+            $('#articles').append(newArticle);
+        }
+
+    })
+})
+
+$('#clear').on('click', function () {
+    $('#articles').empty();
 
 
 })
+
+
