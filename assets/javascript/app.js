@@ -25,7 +25,7 @@ $('#searchb').on('click', function () {
     }).then(function (data) {
         console.log(data)
         for (i = 0; i < count; i++) {
-            var newArticle = $('<div>');
+            var newArticle = $('<div class="articles">');
             var newH = $('<a href="' + data.response.docs[i].web_url + '"><h3>' + data.response.docs[i].abstract + '</h3></a>');
             var newP = $('<p>');
             newP.text(data.response.docs[i].byline['original']);
