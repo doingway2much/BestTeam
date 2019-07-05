@@ -37,7 +37,7 @@ $('#searchb').on('click', function () {
 })
 
 $('#clear').on('click', function () {
-    $('#articles').empty();
+    $('.articles').empty();
 
 
 })
